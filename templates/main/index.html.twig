@@ -1,0 +1,134 @@
+{% extends 'base.html.twig' %}
+
+{% block html %}
+<html lang="en">      
+
+{% block head %}
+ 
+
+   <head>
+          <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Travelly | travel agency</title>
+      <meta
+         name="Travelly"
+         content="Travelly is an agency that helps you to find your dream travel"
+         />
+      <meta name="robots" content="index,follow" />
+      <link rel="icon" href="{{ asset('icons/voyage.svg') }}" />
+      {% block stylesheets %}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Pattaya&family=Poppins:wght@400;500&display=swap"
+         rel="stylesheet"
+         />
+      {% endblock %}
+      {% block javascripts %}
+      <script src="{{ asset('assets/js/script.js') }}" defer></script>
+      <script src="{{ asset('assets/js/login-popup.js') }}" defer></script>
+      {% endblock %}
+   </head>
+{% endblock %}
+
+
+      {% block body %}
+<body>
+     <header class="main-head">
+         <nav>
+            <h1 id="logo">Travel'oori</h1>
+            <ul>
+               <li><a href="#benefices">Benefits</a></li>
+               <div class="centert">
+                  <button>
+                     <li id="show-signin">Inscription</li>
+                  </button>
+               </div>
+               <div class="centert">
+                  <button>
+                     <li id="show-login">Connexion</li>
+                  </button>
+               </div>
+            </ul>
+         </nav>
+         <!-- pop up login-->
+         <div class="pop-up">
+            <div class="close-btn">&times;</div>
+            <div class="form">
+               <h2>Login</h2>
+               <div class="form-element">
+                  <label for="email">Email</label>
+                  <input type="text" id="email" placeholder="Entrez votre email">
+               </div>
+               <div class="form-element">
+                  <label for="password">Mot de passe</label>
+                  <input type="password" id="password" placeholder="Entrez votre mot de passe">
+               </div>
+               <div class="form-element">
+                  <input type="checkbox" id="remember-me">
+                  <label for="remember-me">Se souvenir</label>
+               </div>
+               <div class="form-element">
+                  <button>Connexion</button>
+               </div>
+               <div class="form-element">
+                  <div class="show-sign-in">
+                     <a href="#">Inscription</a>
+                  </div>
+                  <a href="#">Mot de passe oublié ?</a>
+               </div>
+            </div>
+         </div>
+         <!-- fin pop up login-->
+         <!-- pop up signup-->
+         <div class="pop-up2">
+            <div class="close-btn2">&times;</div>
+            <div class="form">
+               <h2>Inscrivez-vous</h2>
+               <div class="form-element">
+                  <label for="email">Adresse Mail</label>
+                  <input type="text" id="email" placeholder="Entrez votre email">
+                  <div class="form-element">
+                     <label for="password">Mot de passe</label>
+                     <input type="password" id="password" placeholder="Entrez votre mot de passe">
+                  </div>
+               </div>
+               <div class="form-element">
+                  <button>Envoyer</button>
+               </div>
+            </div>
+         </div>
+         </div>
+         <!-- fin pop up signup-->
+      </header>
+      <section class="hero">
+         <h2 class="test">Travel beyond limits.</h2>
+         <h3>
+            Start travelling to world best places at an affordable price with Travel'oori
+            <br />
+            check it bellow 
+         </h3>
+         <button class="bubbly-button">See offers</button>
+      </section>
+      <section class="hero-2">
+         <h2 class="test">Travel beyond limits.</h2>
+         <h3>
+            Discover Florence, a beautiful and enchanting city that captivates with its artistic beauty, 
+            <br />
+            historic architecture, and romantic atmosphere.
+         </h3>
+         <button class="bubbly-button">See offers</button>
+      </section>
+      <section id="benefices">
+         <header class="benefices-head">
+         </header>
+      </section>
+    </body>
+      {% endblock %}
+
+</html>
+
+{% endblock %}
