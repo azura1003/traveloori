@@ -10,13 +10,12 @@
           <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>Travelly | travel agency</title>
       <meta
          name="Travelly"
          content="Travelly is an agency that helps you to find your dream travel"
          />
       <meta name="robots" content="index,follow" />
-      <link rel="icon" href="{{ asset('icons/voyage.svg') }}" />
+      <link rel="icon" href="{{ asset('/icons/voyages.svg') }}" />
       {% block stylesheets %}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,23 +36,9 @@
 
       {% block body %}
 <body>
+
      <header class="main-head">
-         <nav>
-            <h1 id="logo">Travel'oori</h1>
-            <ul>
-               <li><a href="#benefices">Benefits</a></li>
-               <div class="centert">
-                  <button>
-                     <li id="show-signin">Inscription</li>
-                  </button>
-               </div>
-               <div class="centert">
-                  <button>
-                     <li id="show-login">Connexion</li>
-                  </button>
-               </div>
-            </ul>
-         </nav>
+           {% include "_partials/_nav.html.twig" %}
          <!-- pop up login-->
          <div class="pop-up">
             <div class="close-btn">&times;</div>
