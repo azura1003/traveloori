@@ -269,7 +269,7 @@ body {
       110% 10%;
     background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
   }
-} /*# sourceMappingURL=style.css.map */
+} 
 
 /* bubbly zindex */
 .bubbly-button {
@@ -355,12 +355,12 @@ body {
   color: #838080;
 }
 
-.pop-up .form .form-element input[type="text"]::placeholder,
+.pop-up .form .form-element input[type="email"]::placeholder,
 .pop-up .form .form-element input[type="password"]::placeholder {
   color: #cecccc;
 }
 
-.pop-up .form .form-element input[type="text"],
+.pop-up .form .form-element input[type="email"],
 .pop-up .form .form-element input[type="password"] {
   font-size: 15px;
   margin-top: 5px;
@@ -498,12 +498,12 @@ body {
   color: #838080;
 }
 
-.pop-up2 .form .form-element input[type="text"]::placeholder,
+.pop-up2 .form .form-element input[type="email"]::placeholder,
 .pop-up2 .form .form-element input[type="password"]::placeholder {
   color: #cecccc;
 }
 
-.pop-up2 .form .form-element input[type="text"],
+.pop-up2 .form .form-element input[type="email"],
 .pop-up2 .form .form-element input[type="password"] {
   font-size: 15px;
   margin-top: 5px;
