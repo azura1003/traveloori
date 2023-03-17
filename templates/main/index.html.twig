@@ -39,37 +39,11 @@
      <header class="main-head">
            {% include "_partials/_nav.html.twig" %}
          <!-- pop up login-->
-            <div class="pop-up">
-               <div class="close-btn">&times;</div>
-               <div class="form">
-                  <h2>Login</h2>
-                  <form id="login-form" method="post" action="{{ path('app_login') }}">
-                        <div class="form-element">
-                           <label for="email">Email</label>
-                           <input type="email" name="email" id="email" placeholder="Entrez votre email">
-                        </div>
-                        <div class="form-element">
-                           <label for="password">Mot de passe</label>
-                           <input type="password" name="password" id="password" placeholder="Entrez votre mot de passe">
-                        </div>
-                        <div class="form-element">
-                           <input type="checkbox" name="remember_me" id="remember-me">
-                           <label for="remember-me">Se souvenir</label>
-                        </div>
-                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
-                        <div class="form-element">
-                           <button type="submit">Connexion</button>
-                        </div>
-                  </form>
-                  <div class="form-element">
-                        <a href="#">Mot de passe oublié ?</a>
-                  </div>
-               </div>
-            </div>
+      {% include 'security/login.html.twig' %}
          <!-- fin pop up login-->
 
          <!-- pop up signup-->
-       {% include 'registration/register.html.twig' with {'formRegister': formRegister} %} 
+      {% include 'registration/register.html.twig' with {'formRegister': formRegister} %} 
          <!-- fin pop up signup-->
       </header>
       <section class="hero">
