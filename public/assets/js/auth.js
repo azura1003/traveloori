@@ -12,10 +12,17 @@ document.getElementById('signup-form').addEventListener('submit', async function
       body: formData
     });
 
+   
+
     if (response.ok) {
-      // Inscription réussie, vous pouvez fermer la popup ou rediriger l'utilisateur
+      const jsonResponse = await response.json();
+      // Inscription réussie, rediriger l'utilisateur vers la page timeline
+      if (jsonResponse.success) {
+        // Inscription réussie, rediriger l'utilisateur vers la page timeline
+        window.location.href = '/timeline';
+
     } else {
-      // Afficher une erreur
+      // Afficher une erreur en utilisant jsonResponse.message et/ou jsonResponse.errors
     }
   } catch (error) {
     // Gérer l'erreur réseau

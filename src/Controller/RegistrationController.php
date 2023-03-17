@@ -12,10 +12,18 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 
 class RegistrationController extends AbstractController
 {
+    private $urlGenerator;
+
+    public function __construct(UrlGeneratorInterface $urlGenerator)
+    {
+        $this->urlGenerator = $urlGenerator;
+    }
+
     #[Route('/register', name: 'app_register')]
     public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, UserAuthenticator $authenticator, EntityManagerInterface $entityManager): Response
     {
@@ -36,8 +44,13 @@ class RegistrationController extends AbstractController
     
                     $entityManager->persist($user);
                     $entityManager->flush();
-    
-                    return new JsonResponse(['success' => true]);
+                    
+                    $redirectUrl = $this->urlGenerator->generate('ventes');
+
+                    return new JsonResponse([
+                        'success' => true,
+                        'redirectUrl' => $redirectUrl
+                    ]);
                 }
     
                 $errors = [];

@@ -6,6 +6,7 @@ use App\Entity\User;
 use App\Form\RegistrationFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\Response;
 
 class MainController extends AbstractController
 {
@@ -17,5 +18,10 @@ class MainController extends AbstractController
         return $this->render('main/index.html.twig', [
             'formRegister' => $formRegister->createView(),
         ]);
+    }
+    #[Route('/ventes', name: 'ventes')]
+    public function timeline(): Response
+    {
+        return $this->render('timeline.html.twig');
     }
 }

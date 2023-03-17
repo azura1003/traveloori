@@ -5,7 +5,7 @@ controllers:
     type: attribute
 # ajouter par moi
 app_login:
-    path: /test-page
+    path: /login
     controller: App\Controller\SecurityController::login
 app_register:
     path: /register
