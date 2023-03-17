@@ -7,24 +7,7 @@
  
 
    <head>
-          <meta charset="UTF-8" />
-      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta
-         name="Travelly"
-         content="Travelly is an agency that helps you to find your dream travel"
-         />
-      <meta name="robots" content="index,follow" />
-      <link rel="icon" href="{{ asset('/icons/voyages.svg') }}" />
       {% block stylesheets %}
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link
-         href="https://fonts.googleapis.com/css2?family=Pattaya&family=Poppins:wght@400;500&display=swap"
-         rel="stylesheet"
-         />
       {% endblock %}
       {% block javascripts %}
       <script src="{{ asset('assets/js/login-popup.js') }}" defer></script>
@@ -69,8 +52,8 @@
          </header>
       </section>
 
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script src="{{ asset('assets/js/auth.js') }}"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+      <script src="{{ asset('assets/js/auth.js') }}" defer></script>
 
     </body>
       {% endblock %}

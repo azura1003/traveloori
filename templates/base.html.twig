@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="UTF-8">
         <title>{% block title %}Traveloory | Travel agency{% endblock %}</title>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="robots" content="index,follow" />
         <link rel="icon" href="{{ asset('/icons/voyage.svg') }}" />
         <meta name"viewport" content="width=device-width, initial-scale=1.0">
-
+        <meta
+         name="Travelly"
+         content="Travelly is an agency that helps you to find your dream travel"
+         />
         <!-- style sheets -->
         <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+         href="https://fonts.googleapis.com/css2?family=Pattaya&family=Poppins:wght@400;500&display=swap"
+         rel="stylesheet"
+         />
         {% block stylesheets %}
         {% endblock %}
 
         <!-- js files -->
-        <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}" defer></script>
+        <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
         {% block javascripts %}
-        <script src="{{ asset('assets/js/script.js') }}" defer></script>
         {% endblock %}
     </head>
     <body>

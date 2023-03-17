@@ -1,7 +1,27 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Ventes{% endblock %}
-
-{% block body %}
-    <h1>Page des ventes</h1>
+{% block html %}
+<html>
+   {% block body %}
+   <body>
+      <header class="main-head">
+         <nav>
+            <h1 id="logo">Travel'oori</h1>
+            <ul>
+               <li><a href="#benefices">Nos offres</a></li>
+               <div class="centert">
+                  <button>
+                     <li id="show-signin">Commandes</li>
+                  </button>
+               </div>
+               <div class="centert">
+                  <button>
+                     <li id="show-login">Mon compte</li>
+                  </button>
+               </div>
+            </ul>
+         </nav>
+      </header>
+   </body>
+   {% endblock %}
+</html>
 {% endblock %}
