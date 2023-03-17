@@ -11,7 +11,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class SecurityController extends AbstractController
 {
-    #[Route(path: '/test-page', name: 'app_login')]
+    #[Route(path: '/login', name: 'app_login')]
     public function login(Request $request, AuthenticationUtils $authenticationUtils): Response
     {
         if ($request->isXmlHttpRequest()) {
@@ -21,7 +21,7 @@ class SecurityController extends AbstractController
 
             if ($user = $this->getUser()) {
                 // Utilisateur connecté avec succès
-                return new JsonResponse(['success' => true]);
+                return new JsonResponse(['success' => true, 'redirect' => $this->generateUrl('ventes')]);
             }
 
             // Échec de connexion non détecté par getLastAuthenticationError

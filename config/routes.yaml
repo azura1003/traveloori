@@ -10,3 +10,6 @@ app_login:
 app_register:
     path: /register
     controller: App\Controller\RegistrationController::register
+ventes:
+    path: /ventes
+    controller: App\Controller\MainController::timeline

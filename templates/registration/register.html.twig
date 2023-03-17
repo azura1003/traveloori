@@ -1,17 +1,39 @@
-{% extends 'base.html.twig' %}
+{# registration/register.html.twig #}
 
-{% block title %}Register{% endblock %}
-
-{% block body %}
-    <h1>Register</h1>
-
-    {{ form_start(registrationForm) }}
-        {{ form_row(registrationForm.email) }}
-        {{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}
-        {{ form_row(registrationForm.agreeTerms) }}
-
-        <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }}
-{% endblock %}
+<div class="pop-up2">
+    <div class="close-btn2">&times;</div>
+    <div class="form">
+        <h2>Inscrivez-vous</h2>
+        <form id="signup-form" method="post" action="{{ path('app_register') }}" enctype="multipart/form-data">
+            <div class="form-element">
+                <label for="email">Adresse Mail</label>
+                {{ form_widget(formRegister.email, {'attr': {'placeholder': 'Entrez votre email'}}) }}
+            </div>
+            <div class="form-element">
+                <label for="password">Mot de passe</label>
+                {{ form_widget(formRegister.plainPassword, {'attr': {'placeholder': 'Entrez votre mot de passe'}}) }}
+            </div>
+            <div class="form-element">
+                <label for="lastname">Nom</label>
+                {{ form_widget(formRegister.lastname, {'attr': {'placeholder': 'Entrez votre nom'}}) }}
+            </div>
+            <div class="form-element">
+                <label for="firstname">Prénom</label>
+                {{ form_widget(formRegister.firstname, {'attr': {'placeholder': 'Entrez votre prénom'}}) }}
+            </div>
+            <div class="form-element">
+                <label for="address">Adresse</label>
+                {{ form_widget(formRegister.address, {'attr': {'placeholder': 'Entrez votre adresse'}}) }}
+            </div>
+            <div class="form-element">
+                {{ form_widget(formRegister.agreeTerms) }}
+                {{ form_label(formRegister.agreeTerms) }}
+            </div>
+            <div class="form-element">
+                <button type="submit">Envoyer</button>
+            </div>
+            {{ form_rest(formRegister) }}
+            {{ form_end(formRegister, {'render_rest': false}) }}
+        </form>
+    </div>
+</div>

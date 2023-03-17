@@ -27,7 +27,6 @@
          />
       {% endblock %}
       {% block javascripts %}
-      <script src="{{ asset('assets/js/script.js') }}" defer></script>
       <script src="{{ asset('assets/js/login-popup.js') }}" defer></script>
       {% endblock %}
    </head>
@@ -40,72 +39,37 @@
      <header class="main-head">
            {% include "_partials/_nav.html.twig" %}
          <!-- pop up login-->
-         <div class="pop-up">
-            <div class="close-btn">&times;</div>
-            <div class="form">
-               <h2>Login</h2>
-               <form id="login-form" method="post">
+            <div class="pop-up">
+               <div class="close-btn">&times;</div>
+               <div class="form">
+                  <h2>Login</h2>
+                  <form id="login-form" method="post" action="{{ path('app_login') }}">
+                        <div class="form-element">
+                           <label for="email">Email</label>
+                           <input type="email" name="email" id="email" placeholder="Entrez votre email">
+                        </div>
+                        <div class="form-element">
+                           <label for="password">Mot de passe</label>
+                           <input type="password" name="password" id="password" placeholder="Entrez votre mot de passe">
+                        </div>
+                        <div class="form-element">
+                           <input type="checkbox" name="remember_me" id="remember-me">
+                           <label for="remember-me">Se souvenir</label>
+                        </div>
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                        <div class="form-element">
+                           <button type="submit">Connexion</button>
+                        </div>
+                  </form>
                   <div class="form-element">
-                     <label for="email">Email</label>
-                     <input type="email" name="email" id="email" placeholder="Entrez votre email">
+                        <a href="#">Mot de passe oublié ?</a>
                   </div>
-                  <div class="form-element">
-                     <label for="password">Mot de passe</label>
-                     <input type="password" name="password" id="password" placeholder="Entrez votre mot de passe">
-                  </div>
-                  <div class="form-element">
-                     <input type="checkbox" name="remember_me" id="remember-me">
-                     <label for="remember-me">Se souvenir</label>
-                  </div>
-                  <div class="form-element">
-                     <button type="submit">Connexion</button>
-                  </div>
-               </form>
-               <div class="form-element">
-                  <a href="#">Mot de passe oublié ?</a>
                </div>
             </div>
-         </div>
          <!-- fin pop up login-->
+
          <!-- pop up signup-->
-         <div class="pop-up2">
-            <div class="close-btn2">&times;</div>
-             <div class="form">
-               <h2>Inscrivez-vous</h2>
-                  <form id="signup-form" method="post" action="{{ path('app_register') }}" enctype="multipart/form-data">
-                     <div class="form-element">
-                        <label for="email">Adresse Mail</label>
-                        {{ form_widget(formRegister.email, {'attr': {'placeholder': 'Entrez votre email'}}) }}
-                     </div>
-                     <div class="form-element">
-                        <label for="password">Mot de passe</label>
-                        {{ form_widget(formRegister.plainPassword, {'attr': {'placeholder': 'Entrez votre mot de passe'}}) }}
-                     </div>
-                     <div class="form-element">
-                        <label for="lastname">Nom</label>
-                        {{ form_widget(formRegister.lastname, {'attr': {'placeholder': 'Entrez votre nom'}}) }}
-                     </div>
-                     <div class="form-element">
-                        <label for="firstname">Prénom</label>
-                        {{ form_widget(formRegister.firstname, {'attr': {'placeholder': 'Entrez votre prénom'}}) }}
-                     </div>
-                     <div class="form-element">
-                        <label for="address">Adresse</label>
-                        {{ form_widget(formRegister.address, {'attr': {'placeholder': 'Entrez votre adresse'}}) }}
-                     </div>
-                     <div class="form-element">
-                        {{ form_widget(formRegister.agreeTerms) }}
-                        {{ form_label(formRegister.agreeTerms) }}
-                     </div>
-                     <div class="form-element">
-                        <button type="submit">Envoyer</button>
-                     </div>
-                     {{ form_rest(formRegister) }}
-                     {{ form_end(formRegister, {'render_rest': false}) }}
-                  </form>
-            </div>
-          </div>
-         </div>
+       {% include 'registration/register.html.twig' with {'formRegister': formRegister} %} 
          <!-- fin pop up signup-->
       </header>
       <section class="hero">

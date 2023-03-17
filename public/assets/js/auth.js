@@ -12,8 +12,6 @@ document.getElementById('signup-form').addEventListener('submit', async function
       body: formData
     });
 
-   
-
     if (response.ok) {
       const jsonResponse = await response.json();
       // Inscription réussie, rediriger l'utilisateur vers la page timeline
@@ -32,22 +30,31 @@ document.getElementById('signup-form').addEventListener('submit', async function
 document.getElementById('login-form').addEventListener('submit', async function (event) {
   event.preventDefault();
   const formData = new FormData(event.target);
-  
-  try {
-      const response = await fetch('/login', {
-          method: 'POST',
-          headers: {
-              'X-Requested-With': 'XMLHttpRequest', // Ajoutez cet en-tête
-          },
-          body: formData
-      });
 
-      if (response.ok) {
-          // Connexion réussie, vous pouvez fermer la popup ou rediriger l'utilisateur
+  try {
+    const response = await fetch('/login', {
+      method: 'POST',
+      headers: {
+        'X-Requested-With': 'XMLHttpRequest',
+      },
+      body: formData
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      if (data.success) {
+        if (data.redirect) {
+          window.location.href = data.redirect;
+        } else {
+          // Gérer le cas où il n'y a pas de champ "redirect" dans la réponse
+        }
       } else {
-          // Afficher une erreur
+        // Afficher une erreur
       }
+    } else {
+      // Afficher une erreur
+    }
   } catch (error) {
-      // Gérer l'erreur réseau
+    // Gérer l'erreur réseau
   }
 });
