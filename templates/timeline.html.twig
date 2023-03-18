@@ -7,22 +7,25 @@
         {% endblock %}
 </head>
    {% block body %}
-   <body>
-    <div class="banner" style="background-image: url('{{ asset('/img/sunset.jpg') }}');">
-    <div class="glass"></div>
+<body>
+    <div class="banner-container">
+        <div class="banner banner-1"></div>
+        <div class="banner banner-2"></div>
+        <div class="banner banner-3"></div>
+        <div class="glass"></div>
         <div class="banner-title-container">
             <h1>"Voyager, c'est s'ouvrir à l'infini des possibles et s'émerveiller de la beauté du monde."</h1>
         </div>
         <div class="search-bar">
-        <input type="text" placeholder="Destination" class="search-input">
-        <input type="text" placeholder="Départ de" class="search-input">
-        <input type="date" placeholder="Date" class="search-input">
-        <select class="search-input">
-            <option value="" disabled selected>Type séjour</option>
-            <option value="option1">Option 1</option>
-            <option value="option2">Option 2</option>
-        </select>
-        <button class="search-button">Rechercher</button>
+            <input type="text" placeholder="Destination" class="search-input">
+            <input type="text" placeholder="Départ de" class="search-input">
+            <input type="date" placeholder="Date" class="search-input">
+            <select class="search-input">
+                <option value="" disabled selected>Type séjour</option>
+                <option value="option1">Option 1</option>
+                <option value="option2">Option 2</option>
+            </select>
+            <button class="search-button">Rechercher</button>
         </div>
     </div>
       <header class="main-head">
@@ -53,12 +56,15 @@
                 </li>
             </button>
             </div>
-            <div class="top-btn">
-            <button>
-                <li id="déco">
-                <img src="/icons/sortir.svg" alt="Déconnexion" class="my-svg-icon">
-                </li>
-            </button>
+            {% if app.user %}
+                <div class="top-btn">
+                    <a href="{{ path('app_logout') }}">
+                        <li id="déco">
+                            <img src="/icons/sortir.svg" alt="Déconnexion" class="my-svg-icon">
+                        </li>
+                    </a>
+                </div>
+            {% endif %}
             </div>
         </ul>
         </nav>
@@ -93,16 +99,16 @@
             </div>
         <div class="offer-row">
             <div class="offer-box">
-                <img src="{{ asset('/img/atol-maldives.jpg') }}" alt="offer image">
-                <h3>MALDIVES / Atol de Raa</h3>
-                <p>Passez un super séjour en découvrant cette métropole internationale</p>
-                <p>Hôtel Almera de nada 5*</p>
+                <img src="{{ asset('/img/bali.jpg') }}" alt="offer image">
+                <h3>BALI / Tumourna</h3>
+                <p>Des plages de rêve, des champs et des plantations d'un vert intense, une jungle dense, des temples et des palais somptueux</p>
+                <p>Hôtel Kakoutolo 5*</p>
             </div>
             <div class="offer-box">
-                <img src="{{ asset('/img/atol-maldives.jpg') }}" alt="offer image">
-                <h3>MALDIVES / ATOL DE RAA</h3>
-                <p>Allégresse absolue en villa sur la plage ou sur l'eau en tout inclus</p>
-                <p>Hôtel Brennia Kottefaru Maldives 5*</p>
+                <img src="{{ asset('/img/islande.jpg') }}" alt="offer image">
+                <h3>ISLANDE / Árbæjarhellir </h3>
+                <p>Cette lagune glaciaire et sa plage de diamants, à la limite du parc national, font partie des plus beaux sites du pays</p>
+                <p>Auberge Loa's Nest</p>
             </div>
         </div>
         <div class="offer-row">

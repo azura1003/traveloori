@@ -78,17 +78,41 @@
   }
 
   /* banniere ici */ 
-
-  .banner {
+  .banner-container {
     position: relative;
     width: 100%;
     height: 50vh;
-    background-size: cover;
-    background-position: 50% 80%; /* Ajustement pour afficher la partie souhaitée de l'image */
-    z-index: 0;
     overflow: hidden;
   }
-      
+  
+  .banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+    background-size: cover;
+    background-position: 50% 80%;
+    z-index: 0;
+    opacity: 0; /* Fixe l'opacity à 0 par défaut */
+    transition: opacity 3s ease-in-out;
+  }
+  
+  .banner.active {
+    opacity: 1;
+  }
+  
+  .banner-1 {
+    background-image: url('/img/sunset.jpg');
+  }
+  
+  .banner-2 {
+    background-image: url('/img/Atol-maldives.jpg');
+  }
+  
+  .banner-3 {
+    background-image: url('/img/land2.jpg');
+  }
  /* banner title */
 
   .banner-title-container {
