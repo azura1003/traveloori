@@ -222,6 +222,34 @@
  }
 
 
+/* bandeau partenaires */
+
+.partners {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f9f9f9; /* Vous pouvez ajuster cette couleur pour correspondre au style graphique de votre site */
+}
+
+.partners-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.partners-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15rem;
+}
+
+.partners-logos img {
+  width: auto;
+  height: 50px; /* Vous pouvez ajuster cette valeur pour changer la taille des logos */
+  filter: grayscale(100%); /* Applique un filtre en niveaux de gris sur les logos */
+}
+
+
   /* section offer ici */
 
   .offers {
