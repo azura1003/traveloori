@@ -10,27 +10,58 @@
    <body>
     <div class="banner" style="background-image: url('{{ asset('/img/sunset.jpg') }}');">
     <div class="glass"></div>
-      <div class="banner-title-container">
-    <h1>"Voyager, c'est s'ouvrir à l'infini des possibles et s'émerveiller de la beauté du monde."</h1>
-  </div>
+        <div class="banner-title-container">
+            <h1>"Voyager, c'est s'ouvrir à l'infini des possibles et s'émerveiller de la beauté du monde."</h1>
+        </div>
+        <div class="search-bar">
+        <input type="text" placeholder="Destination" class="search-input">
+        <input type="text" placeholder="Départ de" class="search-input">
+        <input type="date" placeholder="Date" class="search-input">
+        <select class="search-input">
+            <option value="" disabled selected>Type séjour</option>
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+        </select>
+        <button class="search-button">Rechercher</button>
+        </div>
     </div>
       <header class="main-head">
-         <nav>
-            <h1 id="logo">Travel'oori</h1>
-            <ul>
-               <li><a href="#benefices">Nos offres</a></li>
-               <div class="centert">
-                  <button>
-                     <li id="show-signin">Commandes</li>
-                  </button>
-               </div>
-               <div class="centert">
-                  <button>
-                     <li id="show-login">Mon compte</li>
-                  </button>
-               </div>
-            </ul>
-         </nav>
+        <nav>
+        <h1 id="logo">Travel'oori</h1>
+        <ul>
+            <div class="top-btn">
+            <button>
+                <li>
+                <img src="/icons/coeur.svg" alt="Nos offres" class="my-svg-icon">
+                Nos offres
+                </li>
+            </button>
+            </div>
+            <div class="top-btn">
+            <button>
+                <li id="show-signin">
+                <img src="/icons/document.svg" alt="Commandes" class="my-svg-icon">
+                Commandes
+                </li>
+            </button>
+            </div>
+            <div class="top-btn">
+            <button>
+                <li id="show-login">
+                <img src="/icons/utilisateur.svg" alt="Mon compte" class="my-svg-icon">
+                Mon compte
+                </li>
+            </button>
+            </div>
+            <div class="top-btn">
+            <button>
+                <li id="déco">
+                <img src="/icons/sortir.svg" alt="Déconnexion" class="my-svg-icon">
+                </li>
+            </button>
+            </div>
+        </ul>
+        </nav>
       </header>
       <section class="recommandation">
       <div class="text-simple">
@@ -46,45 +77,51 @@
                 <p>Hôtel Brennia Kottefaru Maldives 5*</p>
             </div>
             <div class="offer-box">
-                <img src="{{ asset('/img/offer2.jpg') }}" alt="offer image">
-                <h3>Offre 2</h3>
-                <p>Description de l'offre 2</p>
+                <img src="{{ asset('/img/atol-maldives.jpg') }}" alt="offer image">
+                <h3>MALDIVES / ATOL DE RAA</h3>
+                <p>Allégresse absolue en villa sur la plage ou sur l'eau en tout inclus</p>
+                <p>Hôtel Brennia Kottefaru Maldives 5*</p>
+            </div>
+        <div class="offer-row">
+            <div class="offer-box">
+                <img src="{{ asset('/img/atol-maldives.jpg') }}" alt="offer image">
+                <h3>MALDIVES / ATOL DE RAA</h3>
+                <p>Allégresse absolue en villa sur la plage ou sur l'eau en tout inclus</p>
+                <p>Hôtel Brennia Kottefaru Maldives 5*</p>
+            </div>
+            <div class="offer-box">
+                <img src="{{ asset('/img/atol-maldives.jpg') }}" alt="offer image">
+                <h3>MALDIVES / ATOL DE RAA</h3>
+                <p>Allégresse absolue en villa sur la plage ou sur l'eau en tout inclus</p>
+                <p>Hôtel Brennia Kottefaru Maldives 5*</p>
             </div>
         </div>
         <div class="offer-row">
             <div class="offer-box">
-                <img src="{{ asset('/img/offer3.jpg') }}" alt="offer image">
-                <h3>Offre 3</h3>
-                <p>Description de l'offre 3</p>
+                <img src="{{ asset('/img/atol-maldives.jpg') }}" alt="offer image">
+                <h3>MALDIVES / ATOL DE RAA</h3>
+                <p>Allégresse absolue en villa sur la plage ou sur l'eau en tout inclus</p>
+                <p>Hôtel Brennia Kottefaru Maldives 5*</p>
             </div>
             <div class="offer-box">
-                <img src="{{ asset('/img/offer4.jpg') }}" alt="offer image">
-                <h3>Offre 4</h3>
-                <p>Description de l'offre 4</p>
-            </div>
-        </div>
-        <div class="offer-row">
-            <div class="offer-box">
-                <img src="{{ asset('/img/offer5.jpg') }}" alt="offer image">
-                <h3>Offre 5</h3>
-                <p>Description de l'offre 5</p>
-            </div>
-            <div class="offer-box">
-                <img src="{{ asset('/img/offer6.jpg') }}" alt="offer image">
-                <h3>Offre 6</h3>
-                <p>Description de l'offre 6</p>
+                <img src="{{ asset('/img/atol-maldives.jpg') }}" alt="offer image">
+                <h3>MALDIVES / ATOL DE RAA</h3>
+                <p>Allégresse absolue en villa sur la plage ou sur l'eau en tout inclus</p>
+                <p>Hôtel Brennia Kottefaru Maldives 5*</p>
             </div>
         </div>
         <div class="offer-row">
             <div class="offer-box">
-                <img src="{{ asset('/img/offer7.jpg') }}" alt="offer image">
-                <h3>Offre 7</h3>
-                <p>Description de l'offre 7</p>
+                <img src="{{ asset('/img/atol-maldives.jpg') }}" alt="offer image">
+                <h3>MALDIVES / ATOL DE RAA</h3>
+                <p>Allégresse absolue en villa sur la plage ou sur l'eau en tout inclus</p>
+                <p>Hôtel Brennia Kottefaru Maldives 5*</p>
             </div>
             <div class="offer-box">
-                <img src="{{ asset('/img/offer8.jpg') }}" alt="offer image">
-                <h3>Offre 8</h3>
-                <p>Description de l'offre 8</p>
+                <img src="{{ asset('/img/atol-maldives.jpg') }}" alt="offer image">
+                <h3>MALDIVES / ATOL DE RAA</h3>
+                <p>Allégresse absolue en villa sur la plage ou sur l'eau en tout inclus</p>
+                <p>Hôtel Brennia Kottefaru Maldives 5*</p>
             </div>
         </div>
         </section>

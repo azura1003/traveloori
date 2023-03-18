@@ -1,4 +1,14 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+  }
 
+  html {
+    font-size: 62.5%;
+  }
+
+  
 .main-head {
     position: fixed;
     top: 0;
@@ -46,38 +56,26 @@
 
  /* nav center bouton */
 
- .top-btn {
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform: translate(-50%, -50%);
-}
 
 .top-btn button {
   padding: 10px 20px;
-  font-size: 15px;
-  font-weight:600;
-  color: #e60074;
+  font-size: 13px;
+  font-weight:700;
+  /* color: #e60074; */
+  color: #fff;
   border: none;
   outline: none;
   cursor: pointer;
   border-radius: 5px;
+  background: transparent;
 }
 
-nav ul {
-    float: right;
-  }
-  
-  nav ul li {
-    display: inline-block;
-    margin-left: 20px;
-  }
-
-
   /* nav icon svg */ 
-
- 
-  
+  .my-svg-icon {
+    width: 22px;
+    height: 30px;
+    fill: white;
+  }
 
   /* banniere ici */ 
 
@@ -162,6 +160,55 @@ nav ul {
     cursor: pointer;
   }
 
+/* search bar */
+
+.search-bar {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  /* padding: 0.5rem; */
+  padding: 1rem 3rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search-input {
+  border: none;
+  outline: none;
+  padding: 0.5rem 2rem;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.search-input:last-child {
+  border-right: none;
+}
+
+.search-input[type="date"] {
+  cursor: pointer;
+}
+
+.search-button {
+  background-color: #007BFF;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.5rem 3rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+
  /* text recommandations */
 .text-simple {
     margin: 50px;
@@ -178,22 +225,23 @@ nav ul {
   /* section offer ici */
 
   .offers {
-    margin: 2rem auto;
-    max-width: 90%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; 
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
   }
   
   .offer-row {
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
     width: 100%;
-    margin-bottom: 2rem;
   }
   
   .offer-box {
-    flex: 0 0 calc(50% - 1rem); 
+    width: calc(50% - 1rem);
     padding: 1rem;
     background-color: #fff;
     border-radius: 5px;
