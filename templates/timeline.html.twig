@@ -8,9 +8,12 @@
 </head>
    {% block body %}
    <body>
-      <div class="banner">
-         <img src="{{ asset('/img/florence.jpg') }}" alt="banner image">
-      </div>
+    <div class="banner" style="background-image: url('{{ asset('/img/sunset.jpg') }}');">
+    <div class="glass"></div>
+      <div class="banner-title-container">
+    <h1>"Voyager, c'est s'ouvrir à l'infini des possibles et s'émerveiller de la beauté du monde."</h1>
+  </div>
+    </div>
       <header class="main-head">
          <nav>
             <h1 id="logo">Travel'oori</h1>
@@ -29,6 +32,66 @@
             </ul>
          </nav>
       </header>
+      <section class="recommandation">
+      <div class="text-simple">
+      <p> Toutes nos ventes triées par recommandation</P>
+      </div>
+      </section>
+        <section class="offers">
+        <div class="offer-row">
+            <div class="offer-box">
+                <img src="{{ asset('/img/atol-maldives.jpg') }}" alt="offer image">
+                <h3>MALDIVES / ATOL DE RAA</h3>
+                <p>Allégresse absolue en villa sur la plage ou sur l'eau en tout inclus</p>
+                <p>Hôtel Brennia Kottefaru Maldives 5*</p>
+            </div>
+            <div class="offer-box">
+                <img src="{{ asset('/img/offer2.jpg') }}" alt="offer image">
+                <h3>Offre 2</h3>
+                <p>Description de l'offre 2</p>
+            </div>
+        </div>
+        <div class="offer-row">
+            <div class="offer-box">
+                <img src="{{ asset('/img/offer3.jpg') }}" alt="offer image">
+                <h3>Offre 3</h3>
+                <p>Description de l'offre 3</p>
+            </div>
+            <div class="offer-box">
+                <img src="{{ asset('/img/offer4.jpg') }}" alt="offer image">
+                <h3>Offre 4</h3>
+                <p>Description de l'offre 4</p>
+            </div>
+        </div>
+        <div class="offer-row">
+            <div class="offer-box">
+                <img src="{{ asset('/img/offer5.jpg') }}" alt="offer image">
+                <h3>Offre 5</h3>
+                <p>Description de l'offre 5</p>
+            </div>
+            <div class="offer-box">
+                <img src="{{ asset('/img/offer6.jpg') }}" alt="offer image">
+                <h3>Offre 6</h3>
+                <p>Description de l'offre 6</p>
+            </div>
+        </div>
+        <div class="offer-row">
+            <div class="offer-box">
+                <img src="{{ asset('/img/offer7.jpg') }}" alt="offer image">
+                <h3>Offre 7</h3>
+                <p>Description de l'offre 7</p>
+            </div>
+            <div class="offer-box">
+                <img src="{{ asset('/img/offer8.jpg') }}" alt="offer image">
+                <h3>Offre 8</h3>
+                <p>Description de l'offre 8</p>
+            </div>
+        </div>
+        </section>
+          {% block javascripts %}
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="{{ asset('assets/js/scroll-banner.js') }}" defer></script>
+    {% endblock %}
    </body>
    {% endblock %}
 </html>
